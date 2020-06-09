@@ -25,6 +25,7 @@
 
     --header-border-color:rgb(228,222,231);
     --light-border-color:rgba(217,211,208,0.6);
+    --dark-border-color:hsl(0, 0%, 35%);
 
     --body-bg:rgb(26,27,37);
 }
@@ -84,11 +85,13 @@ a:hover {
     width:100%;
     max-width: 210mm;
     margin:auto;
+    box-shadow: black 0px 0px 15px;
 
 
     display: grid;
     grid-template-areas:"head    head"
                         "main    aside"
+                        "prod    prod"
                         "foot    foot";
     grid-column-gap: 0;
     grid-column: auto;
@@ -106,8 +109,7 @@ header {
 }
 header h1 {
     padding-bottom: 18px;
-    margin:auto;
-    margin-bottom: -16px;
+    margin: auto auto -16px;
     border-bottom:2px solid var(--header-border-color);
 
     width:70%;
@@ -247,7 +249,7 @@ aside {
     padding-bottom: 10px;
     margin-top: 10px;
     margin-bottom: 10px;
-    border: 0 dotted gray;
+    border: 0 solid var(--light-border-color);
     border-bottom-width: 1px;
 }
 .strengths ul li:last-child {
@@ -281,9 +283,40 @@ aside {
     display: flex;
     align-items: center;
 }
+.sosMedIcon svg {
+    max-width: 16px;
+    margin-top:2px;
+    margin-bottom: -2px;
+}
 .sosMedIcon div:last-child {
     padding-left:8px;
     margin-top:-1px;
+}
+
+
+.projects {
+    grid-area: prod;
+
+}
+.projectsHeader {
+    padding: 20px 40px;
+}
+.projectsList {
+    background-color: hsl(0, 0%, 19%);
+    min-height: 20px;
+    display: flex;
+    width: 100%;
+}
+.project {
+    text-align: center;
+    padding:20px;
+    width: 50%;
+}
+.project:nth-child(odd) {
+    border-right: 1px dashed var(--dark-border-color);
+}
+.project:nth-child(n+3) {
+    border-top: 1px dashed var(--dark-border-color);
 }
 
 footer {
@@ -314,6 +347,6 @@ footer:after{
     .App {
         min-height: 297mm;
     }
-    .sosMed {}
+    .projects {}
     footer {display: none;height:0;}
 }

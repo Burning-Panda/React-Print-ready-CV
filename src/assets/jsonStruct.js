@@ -50,7 +50,18 @@ const json = {
             "alt":"",
             "icon":"",
             "link": ""
-        }]
+        }],
+
+    "projects": [
+        {
+            "name": "",
+            "url": "",
+            "description": "",
+            "languages": [],
+            "progUsed": [],
+            "length": ""
+        }
+    ]
 }
 
 export default json
