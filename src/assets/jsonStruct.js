@@ -61,7 +61,16 @@ const json = {
             "progUsed": [],
             "length": ""
         }
-    ]
+    ],
+    "coverLetter": {
+        "title":"",
+        "to":"",
+        "date":"",
+        "paragraphs":[],
+        "from":"",
+        "work":"",
+        "signature":true
+    }
 }
 
 export default json
