@@ -77,6 +77,9 @@ a:hover {
     color: var(--link-color-hover)
 }
 
+.white-svg {
+    color:white;
+}
 
 .pageSeperator {
     position: fixed;
@@ -106,11 +109,14 @@ a:hover {
     grid-template-columns: 2fr 1fr;
     grid-template-rows: 175px;
 }
+img {
+    max-width: 100%;
+}
 
 header {
     background-color: var(--header-bg-color);
     color: var(--header-font-color);
-    padding:20px;
+    padding:15px 0;
     grid-area:head;
 
     text-align: center;
@@ -318,9 +324,43 @@ aside {
 }
 .project {
     text-align: center;
-    padding:20px;
+    padding:30px 20px 50px;
     width: 50%;
+    font-size: 0.7em;
+    color: var(--cover-letter-body-color);
+    position:relative;
 }
+.projectImage {
+    position: relative;
+    height:200px;
+    box-shadow: 1px 2px 5px -1px #000;
+
+}
+.projectImage img{
+    position: relative;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+}
+
+.project h3{
+    margin-top:20px;
+}
+.project h3 a {
+    color: var(--cover-letter-body-color);
+}
+.project small {
+    font-size:0.8em;
+    font-style: italic;
+    color:var(--cover-letter-light-italic);
+}
+.project p {
+    margin:10px 0;
+}
+.project .no-link{
+    margin-bottom: 22px;
+}
+
 .project:nth-child(odd) {
     border-right: 1px dashed var(--dark-border-color);
 }
@@ -328,6 +368,35 @@ aside {
     border-top: 1px dashed var(--dark-border-color);
 }
 
+.projectFlexInfo {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.projectTools {
+    position: absolute;
+    bottom:10px;
+    left:50%;
+    transform: translate(-50%, -10px);
+
+}
+
+.projProgList img{
+    width:100%;
+    max-width: 15px;
+}
+
+.projProgList {
+    margin-top:10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.projProgList li {
+    padding:0 5px;
+}
 
 .coverLetter {
     min-height: 297mm;
@@ -403,6 +472,14 @@ footer:after{
     opacity: 20%;
 }
 
+.Attribution {
+    font-size: 5px;
+    font-style: italic;
+}
+.Attribution>*{
+    margin:0 7px;
+}
+
 @media print {
     @page{margin: 0;}
     body{
@@ -427,4 +504,5 @@ footer:after{
     }
     .pageSeperator {display:none;}
     footer {display: none;height:0;}
+    .Attribution{display: none;}
 }
