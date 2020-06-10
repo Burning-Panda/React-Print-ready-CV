@@ -1,4 +1,4 @@
-import json from "./json";
+import json from "../assets/json";
 import React from "react";
 import returnIcon from "./returnIcon"
 

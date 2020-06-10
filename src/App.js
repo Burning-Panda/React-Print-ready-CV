@@ -1,20 +1,20 @@
 import React from 'react';
 import json from "./assets/json";
-import getForm from "./assets/formLayout";
-import { Phone, AlternateEmail, LocationOn, VerifiedUser, Group, ChatBubble, DateRange, InsertLink, Instagram, LinkedIn} from '@material-ui/icons';
-import skills from "./assets/skillsCard";
-import experiences from "./assets/experiencesCard";
-import publications from "./assets/publications";
-import education from "./assets/educationCard";
-import strengths from "./assets/strengthCard";
-import certifications from "./assets/certificationsCard";
-import sosMed from "./assets/sosialMediaCard";
+import { Phone, AlternateEmail, LocationOn} from '@material-ui/icons';
+import skills from "./cards/skillsCard";
+import experiences from "./cards/experiencesCard";
+import publications from "./cards/publications";
+import education from "./cards/educationCard";
+import strengths from "./cards/strengthCard";
+import certifications from "./cards/certificationsCard";
+import sosMed from "./cards/sosialMediaCard";
 import projects from "./cards/projectCard";
+import coverLetter from "./cards/coverLetterCard";
 
 function App() {
     return (
     <div className="App">
-      <div className="pageSeperator">{getForm()}</div>
+      <div className="pageSeperator"></div>
       <header>
         <h1>{json.basicInfo.name}</h1>
         <h2>{json.basicInfo.subtitle}</h2>
@@ -34,7 +34,7 @@ function App() {
         </div>
       </header>
 
-      <main>
+      <main className="sizer">
         {(typeof json.skills != "undefined") ? (skills()) : ('')}
         {(typeof json.experiences != "undefined") ? (experiences()) : ('')}
         {(typeof json.publications != "undefined") ? (publications()) : ('')}
@@ -49,10 +49,15 @@ function App() {
         {(typeof json.socialMedia != "undefined") ? (sosMed()) : ('')}
       </aside>
 
+      <div className="otherInfo">
+        {(typeof json.coverLetter != "undefined") ? (
+            coverLetter(json.coverLetter)
+        ) : ('')}
 
-      {(typeof json.projects != "undefined") ? (
-          projects(json.projects)
-      ) : ('')}
+        {(typeof json.projects != "undefined") ? (
+            projects(json.projects)
+        ) : ('')}
+      </div>
 
       <footer>
       </footer>

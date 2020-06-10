@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@300;400;500;600&family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;1,200;1,300;1,400;1,500;1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,700;1,100;1,200;1,300;1,400;1,700&family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap');
 
 .ebonyClay {background-color: rgb(47,52,70);color: rgb(217,230,233);}
 .swissCoffee {background-color: rgb(217,211,208);color: rgb(115,23,107);}
@@ -10,9 +10,11 @@
 
 .Mischka {color:rgb(228,222,231);}
 
-
 :root {
-    --header-bg-color: rgb(57,49,62);
+    /*--header-bg-color: rgb(57,49,62);
+    --header-font-color: rgb(228,222,231);*/
+
+    --header-bg-color: rgb(49, 49, 49);
     --header-font-color: rgb(228,222,231);
 
     --icon-color:rgb(57,49,62);
@@ -28,6 +30,12 @@
     --dark-border-color:hsl(0, 0%, 35%);
 
     --body-bg:rgb(26,27,37);
+
+    --cover-letter-bg: rgb(49, 49, 49);
+    --cover-letter-head-bg: rgb(255, 255, 255);
+    --cover-letter-body-color: rgb(255,255,255);
+    --cover-letter-head-color: rgb(49, 49, 49);
+    --cover-letter-light-italic: rgb(183, 183, 183);
 }
 
 * {
@@ -43,12 +51,12 @@ ul {
 
 body {
     background-color: var(--body-bg);
-    font-family: 'Hind Madurai', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 15px;
 
 }
 h1,h2,h3,h4 {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Open Sans', sans-serif;
 }
 form {
     display:none;
@@ -89,10 +97,10 @@ a:hover {
 
 
     display: grid;
-    grid-template-areas:"head    head"
-                        "main    aside"
-                        "prod    prod"
-                        "foot    foot";
+    grid-template-areas:"head     head"
+                        "main     aside"
+                        "other    other"
+                        "foot     foot";
     grid-column-gap: 0;
     grid-column: auto;
     grid-template-columns: 2fr 1fr;
@@ -164,6 +172,7 @@ main>article>h3, aside>article>h3 {
 .skillsList {
     display: flex;
     flex-wrap:wrap;
+    font-size: 0.8rem;
 }
 .skill {
     margin:6px 10px;
@@ -293,11 +302,11 @@ aside {
     margin-top:-1px;
 }
 
-
-.projects {
-    grid-area: prod;
-
+.otherInfo {
+    grid-area: other;
 }
+
+.projects {min-height: 297mm; margin-top:20px;}
 .projectsHeader {
     padding: 20px 40px;
 }
@@ -319,6 +328,67 @@ aside {
     border-top: 1px dashed var(--dark-border-color);
 }
 
+
+.coverLetter {
+    min-height: 297mm;
+    height:297mm;
+    width: 100%;
+    background-color: var(--cover-letter-bg);
+    margin-top:20px;
+}
+.coverLetter>div {
+    padding:60px 80px;
+}
+.coverLetter .Head{
+    min-height: 175px;
+    background-color: var(--cover-letter-head-bg);
+    position: relative;
+    box-shadow:0 30px 36px -30px rgba(0,0,0,0.5);
+}
+.coverLetter .Head h3 {
+}
+
+.coverLetter>.Head>.time {
+    position: absolute;
+    bottom: 40px;
+    left: 80px;
+}
+
+.coverLetter .Signature{
+    min-height: 200px;
+    color: var(--cover-letter-body-color);
+}
+.coverLetter .Signature i {
+    color: var(--cover-letter-light-italic);
+    font-size: small;
+}
+.coverLetter .Signature>div {
+    border-bottom:1px solid var(--light-border-color);
+    width:180px;
+    padding-bottom:10px;
+}
+.coverLetter .Signature img {
+    max-width: 150px;
+    margin-top:20px;
+}
+
+.coverLetter .Body {
+    min-height: calc(297mm - 50% - 200px);
+    color: var(--cover-letter-body-color);
+    position: relative;
+}
+.coverLetter .Body .paragraphs {
+    margin: 30px 0;
+}
+.coverLetter .Body .BodyParas {
+    position: absolute;
+    top: 50%;
+    left:50%;
+    width: calc(100% - 160px);
+    transform: translate(-50%, -50%);
+}
+
+
 footer {
     grid-area: foot;
     padding:5px;
@@ -327,11 +397,10 @@ footer {
     font-style: italic;
     font-weight: lighter;
 }
-footer:before{
-    content: "Copyright: André T. Lønvik - 2020  |";
-}
+
 footer:after{
-    content: "  Built with react, love and coffee.";
+    content: "This CV was built with React. Designet by André T. Lønvik 2020 (andre@lonvik.no)";
+    opacity: 20%;
 }
 
 @media print {
@@ -344,9 +413,18 @@ footer:after{
         margin: 0;
         /* change the margins as you want them to be. */
     }
+    .sizer {
+        height: calc(297mm - 175px);
+    }
     .App {
         min-height: 297mm;
     }
-    .projects {}
+    .projects {
+        min-height: 297mm;
+    }
+    .coverLetter {
+        font-size: 1.2em;
+    }
+    .pageSeperator {display:none;}
     footer {display: none;height:0;}
 }

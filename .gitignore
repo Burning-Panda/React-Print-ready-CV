@@ -23,3 +23,5 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 src/assets/json.js
+src/assets/signature-white.png
+src/assets/Main.png

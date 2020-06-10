@@ -1,4 +1,4 @@
-import json from "./json";
+import json from "../assets/json";
 import {DateRange} from "@material-ui/icons";
 import React from "react";
 
