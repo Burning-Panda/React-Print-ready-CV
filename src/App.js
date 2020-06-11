@@ -14,7 +14,7 @@ import coverLetter from "./cards/coverLetterCard";
 function App() {
     return (
     <div className="App">
-      <div className="pageSeperator"></div>
+
       <header>
         <h1>{json.basicInfo.name}</h1>
         <h2>{json.basicInfo.subtitle}</h2>
@@ -49,15 +49,15 @@ function App() {
         {(typeof json.socialMedia != "undefined") ? (sosMed()) : ('')}
       </aside>
 
-      <div className="otherInfo">
-        {(typeof json.coverLetter != "undefined") ? (
-            coverLetter(json.coverLetter)
-        ) : ('')}
-
+      <div className="otherProjects">
         {(typeof json.projects != "undefined") ? (
             projects(json.projects)
         ) : ('')}
-      </div>
+      </div><div className="mainCoverLetter">
+        {(typeof json.coverLetter != "undefined") ? (
+            coverLetter(json.coverLetter)
+        ) : ('')}
+    </div>
 
       <footer>
       </footer>

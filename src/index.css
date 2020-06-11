@@ -30,6 +30,9 @@
     --dark-border-color:hsl(0, 0%, 35%);
 
     --body-bg:rgb(26,27,37);
+    --body-dark-bg: hsl(0, 0%, 19%);
+
+    --other-headers-bg:hsl(0, 0%, 100%);
 
     --cover-letter-bg: rgb(49, 49, 49);
     --cover-letter-head-bg: rgb(255, 255, 255);
@@ -100,10 +103,13 @@ a:hover {
 
 
     display: grid;
-    grid-template-areas:"head     head"
-                        "main     aside"
-                        "other    other"
-                        "foot     foot";
+    grid-template-areas:
+            "head           head"
+            "main           aside"
+            "other          other"
+            "coverLetter    coverLetter"
+            "foot           foot";
+
     grid-column-gap: 0;
     grid-column: auto;
     grid-template-columns: 2fr 1fr;
@@ -308,19 +314,25 @@ aside {
     margin-top:-1px;
 }
 
-.otherInfo {
+.otherProjects {
     grid-area: other;
 }
 
-.projects {min-height: 297mm; margin-top:20px;}
+.projects {
+    min-height: 297mm;
+    margin-top:20px;
+    background-color: var(--body-dark-bg);
+}
 .projectsHeader {
     padding: 20px 40px;
+    background-color: var(--other-headers-bg);
 }
 .projectsList {
     background-color: hsl(0, 0%, 19%);
     min-height: 20px;
     display: flex;
     width: 100%;
+    flex-flow: wrap;
 }
 .project {
     text-align: center;
@@ -367,6 +379,11 @@ aside {
 .project:nth-child(n+3) {
     border-top: 1px dashed var(--dark-border-color);
 }
+.project.almostLast{
+    border-bottom:1px dashed var(--dark-border-color);
+    padding-bottom: 51px;
+    margin-bottom: -1px;
+}
 
 .projectFlexInfo {
     display: flex;
@@ -396,6 +413,9 @@ aside {
 }
 .projProgList li {
     padding:0 5px;
+}
+.mainCoverLetter{
+    grid-area: coverLetter;
 }
 
 .coverLetter {
@@ -472,10 +492,18 @@ footer:after{
     opacity: 20%;
 }
 
-.Attribution {
+.Attribution, .Attribution a {
     font-size: 5px;
     font-style: italic;
+    color: var(--cover-letter-light-italic);
 }
+.Attribution{
+    padding:0 40px;
+    display: flex;
+    flex-flow: wrap;
+    margin-top:10px;
+}
+
 .Attribution>*{
     margin:0 7px;
 }

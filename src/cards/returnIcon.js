@@ -7,6 +7,8 @@ import HTML from "../assets/svg/Devicon-html5-plain-wordmark.svg";
 import CSS from "../assets/svg/CSS3_logo_and_wordmark.svg";
 import Python from "../assets/svg/Python.svg";
 import Javascript from "../assets/svg/Javascript-shield.svg";
+import Flask from "../assets/svg/flask.svg";
+import SQLite from "../assets/svg/SQLite370.svg";
 // import CSS from "../assets/svg/";
 
 function returnIcon(ico) {
@@ -32,19 +34,25 @@ function returnIcon(ico) {
             return (<img src={AdobeXD} alt="Adobe CC XD Ikon"/>)
         case 'Adobe Illustrator':
             return(<img src={Illustrator}  alt="Adobe CC Illustrator Ikon"/>)
+        case 'Illustrator':
+            return(<img src={Illustrator}  alt="Adobe CC Illustrator Ikon"/>)
         case 'Adobe Photoshop':
             return(<img src={Photoshop}  alt="Adobe CC Photoshop Ikon"/>)
         case 'HTML':
-            return(<img src={HTML}  alt="HTML5 Logo by W3C" className="white-svg" />)
+            return(<img src={HTML}  alt="HTML5 Logo by W3C" />)
         case 'CSS':
-            return(<img src={CSS}  alt="CSS3 Logo by W3C" className="white-svg" />)
+            return(<img src={CSS}  alt="CSS3 Logo by W3C" />)
         case 'Javascript':
             return (<img src={Javascript} alt="Javascript Ikon"/>)
         case 'Python':
             return (<img src={Python} alt="Python Ikon"/>)
+        case 'Flask':
+            return (<img src={Flask} alt="Flask Ikon, Copyright 2010 Pallets" />)
+        case 'SQLite':
+            return (<img src={SQLite} alt="SQLite Ikon"/>)
 
         default:
-            return null
+            return (ico)
     }
 }
 export default returnIcon

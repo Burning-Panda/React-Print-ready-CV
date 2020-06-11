@@ -57,9 +57,9 @@ const json = {
             "name": "",
             "url": "",
             "description": "",
-            "languages": [],
-            "progUsed": [],
-            "length": ""
+            "tools":[],
+            "image":"",
+            "imageAlt":""
         }
     ],
     "coverLetter": {
