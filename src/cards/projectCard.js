@@ -1,14 +1,36 @@
 import React from "react";
 import returnIcon from "./returnIcon";
+import { SRLWrapper } from "simple-react-lightbox";
 
 
 const projects = (prod) => {
+    const SRLoptions= {
+        settings:{
+            disableKeyboardControls:true,
+            disableWheelControls:true,
+            hideControlsAfter:false
+        },
+        buttons:{
+            showAutoplayButton:false,
+            showDownloadButton:false,
+            showNextButton:false,
+            showPrevButton:false,
+            showThumbnailsButton:false,
+            iconPadding:"10px",
+            size:"60px"
+
+        },
+        thumbnails: {showThumbnails:false}
+    }
+
+
     function has_odd(nbr) {
-        if (prod.length % 2 !== 0 && prod.length - 1 > 1 && nbr === prod.length - 1) {
+        if (prod.length % 2 !== 0 && prod.length-1 > 1 && prod.length-2 === nbr) {
             return ("project almostLast")
         }
         else {return ("project")}
     }
+
     return (
         <div className="projects">
 
@@ -20,7 +42,9 @@ const projects = (prod) => {
                 {prod.map((object,i) =>
                 <article className={has_odd(i)} key={i}>
                     <div className="projectImage">
+                        <SRLWrapper options={SRLoptions}>
                         <img src={ require('../assets/images/'+object.image) }  alt={object.imageAlt}/>
+                        </SRLWrapper>
                     </div>
                     {(typeof object.url != "undefined") ? (
                         <div><h3><a href={object.url}>{object.name}</a></h3><small>{object.url}</small></div>

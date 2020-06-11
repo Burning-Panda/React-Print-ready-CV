@@ -115,6 +115,8 @@ a:hover {
     grid-template-columns: 2fr 1fr;
     grid-template-rows: 175px;
 }
+
+
 img {
     max-width: 100%;
 }
@@ -344,8 +346,8 @@ aside {
 }
 .projectImage {
     position: relative;
-    height:200px;
-    box-shadow: 1px 2px 5px -1px #000;
+
+    box-shadow: 1px 2px 5px 1px #000;
 
 }
 .projectImage img{
@@ -507,6 +509,89 @@ footer:after{
 .Attribution>*{
     margin:0 7px;
 }
+
+.headLarge {
+    display:none;
+}
+
+
+@media screen and (max-width: 2200px) {
+    .projectImage {
+    }
+    .projectImage img {
+        transform: translate(-50%, 0%);
+        margin-bottom:-3px;
+    }
+}
+@media screen and (min-width: 2200px) {
+    .App {
+        display: grid;
+
+        max-width: 420mm;
+        grid-template-areas:
+            "head           head            headLarge"
+            "main           aside           other"
+            "coverLetter    coverLetter     other"
+            "foot           foot            foot";
+
+
+        grid-column-gap: 0;
+        grid-column: auto;
+        grid-template-columns: 1.5fr 1fr 2fr;
+        grid-template-rows: 175px;
+    }
+    .headLarge {
+        grid-area: headLarge;
+        display: block;
+        position: relative;
+    }
+    .projects>.projectsHeader {display: none;}
+    .headLarge > .projectsHeader {
+        display: block;
+        position: absolute;
+        bottom:20px;
+        left:20px;
+        padding:0;
+        font-size: 1.1em;
+    }
+    .projects {margin-top:0; min-height: 100%;}
+    .projectImage {
+        box-shadow: 1px 2px 5px 1px #000;
+    }
+
+    .projectImage img{transform: translate(-50%,1%)}
+
+    .coverLetter {
+        margin-top:0;
+        border-right: 1px dashed var(--dark-border-color);
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .App {
+        grid-template-areas:
+            "head"
+            "main"
+            "aside"
+            "coverLetter"
+            "other"
+            "foot";
+        grid-template-columns: 1fr;
+    }
+    .projects {
+        margin-top: 0;
+        min-height: 300px;
+        padding-bottom:10px;
+    }
+    .projectImage img {
+        margin-bottom: -3px;
+    }
+    footer:after {
+        opacity: 100%;
+    }
+}
+
+
 
 @media print {
     @page{margin: 0;}
