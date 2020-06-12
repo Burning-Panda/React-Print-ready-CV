@@ -351,10 +351,7 @@ aside {
 
 }
 .projectImage img{
-    position: relative;
-    top: 50%;
-    left:50%;
-    transform: translate(-50%, -50%);
+    margin-bottom:-3px;
 }
 
 .project h3{
@@ -425,18 +422,25 @@ aside {
     height:297mm;
     width: 100%;
     background-color: var(--cover-letter-bg);
-    margin-top:20px;
 }
+
 .coverLetter>div {
     padding:60px 80px;
 }
+.coverLetter>div:last-child {
+    padding-bottom: 0;
+    padding-top:10px;
+}
+
 .coverLetter .Head{
     min-height: 175px;
     background-color: var(--cover-letter-head-bg);
     position: relative;
     box-shadow:0 30px 36px -30px rgba(0,0,0,0.5);
 }
-.coverLetter .Head h3 {
+.coverLetter .Head h2 {
+    font-weight: 300;
+    font-size: calc(1em * 2);
 }
 
 .coverLetter>.Head>.time {
@@ -456,7 +460,6 @@ aside {
 .coverLetter .Signature>div {
     border-bottom:1px solid var(--light-border-color);
     width:180px;
-    padding-bottom:10px;
 }
 .coverLetter .Signature img {
     max-width: 150px;
@@ -470,13 +473,9 @@ aside {
 }
 .coverLetter .Body .paragraphs {
     margin: 30px 0;
+    font-family: 'Microsoft JhengHei Light', sans-serif;
 }
 .coverLetter .Body .BodyParas {
-    position: absolute;
-    top: 50%;
-    left:50%;
-    width: calc(100% - 160px);
-    transform: translate(-50%, -50%);
 }
 
 
@@ -519,7 +518,6 @@ footer:after{
     .projectImage {
     }
     .projectImage img {
-        transform: translate(-50%, 0%);
         margin-bottom:-3px;
     }
 }
@@ -527,17 +525,16 @@ footer:after{
     .App {
         display: grid;
 
-        max-width: 420mm;
+        max-width: 90%;
         grid-template-areas:
             "head           head            headLarge"
             "main           aside           other"
             "coverLetter    coverLetter     other"
             "foot           foot            foot";
 
-
         grid-column-gap: 0;
         grid-column: auto;
-        grid-template-columns: 1.5fr 1fr 2fr;
+        grid-template-columns: 1.5fr 1fr 3fr;
         grid-template-rows: 175px;
     }
     .headLarge {
@@ -559,11 +556,16 @@ footer:after{
         box-shadow: 1px 2px 5px 1px #000;
     }
 
-    .projectImage img{transform: translate(-50%,1%)}
+    .projectImage img{
+
+    }
 
     .coverLetter {
         margin-top:0;
         border-right: 1px dashed var(--dark-border-color);
+    }
+    .project p,.project h3 {
+        font-size:calc(1em * 1.3);
     }
 }
 
@@ -615,6 +617,7 @@ footer:after{
     .coverLetter {
         font-size: 1.2em;
     }
+
     .pageSeperator {display:none;}
     footer {display: none;height:0;}
     .Attribution{display: none;}

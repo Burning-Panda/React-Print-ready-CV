@@ -35,8 +35,8 @@ const projects = (prod) => {
         <div className="projects">
 
             <div className="projectsHeader">
-                <h3>Portfolio</h3>
-                <p>Mine Prosjekter</p>
+                <h3>Portefølje</h3>
+                <p>Noen av mine prosjekter</p>
             </div>
             <div className="projectsList">
                 {prod.map((object,i) =>
