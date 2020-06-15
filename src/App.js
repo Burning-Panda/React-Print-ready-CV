@@ -78,6 +78,7 @@ function App() {
       </div>
 
         <footer>
+          <span>Created by <a href="https://github.com/Burning-Panda" target="_blank" rel="noopener noreferrer">André T. Lønvik</a>.</span>
         </footer>
 
       </SimpleReactLightbox>

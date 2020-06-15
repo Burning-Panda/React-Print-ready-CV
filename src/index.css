@@ -489,7 +489,7 @@ footer {
 }
 
 footer:after{
-    content: "This CV was built with React. Designet by André T. Lønvik 2020 (andre@lonvik.no)";
+
     opacity: 20%;
 }
 
@@ -551,7 +551,11 @@ footer:after{
         padding:0;
         font-size: 1.1em;
     }
-    .projects {margin-top:0; min-height: 100%;}
+    .projects {
+        margin-top:0; min-height: 100%;
+        box-shadow: inset 50px 48px 30px -50px black;
+    }
+    .projectsList {background-color: transparent;}
     .projectImage {
         box-shadow: 1px 2px 5px 1px #000;
     }
@@ -591,6 +595,18 @@ footer:after{
     footer:after {
         opacity: 100%;
     }
+}
+@media screen and (max-width: 500px) {
+    .coverLetter>div {
+        padding:35px 30px 5px;
+    }
+    .App {
+        box-shadow: none;
+    }
+    .projectsList {
+        box-shadow: none;
+    }
+    body {background-color: #fff;}
 }
 
 
