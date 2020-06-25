@@ -1,3 +1,10 @@
+## Se siden på nett
+Dette prosjektet er lagt ut på nett for å kunne bruke alle de ekstrafunksjonene jeg har lagt ved.
+[http://cv.andre.agency](http://cv.andre.agency)
+
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
