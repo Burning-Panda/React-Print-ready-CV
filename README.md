@@ -3,7 +3,11 @@ Dette prosjektet er lagt ut på nett for å kunne bruke alle de ekstrafunksjonen
 [http://cv.andre.agency](http://cv.andre.agency)
 
 
-
+## How-To
+Rename or create a file called json.js  
+copy the contens of jsonStruct.js to that file.  
+Fill inn any information you want and delete the rest.
+Images should be placed in assets/images/<IMAGE>
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
